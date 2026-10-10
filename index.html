@@ -44,20 +44,17 @@
   @media (max-width: 720px) { nav a:not(.cta) { display: none; } }
   .cta { background: var(--scuro); color: #fff !important; padding: 8px 16px; border-radius: 999px; }
 
-  /* Apertura: sale a sinistra, lava a destra */
-  .hero { display: grid; grid-template-columns: 1fr 1fr; min-height: min(78vh, 720px); }
-  .hero .sale-lato { background: var(--chiaro); display: flex; align-items: center; padding: 48px 6vw; }
-  .hero .lava-lato { background: var(--forte) center/cover no-repeat; position: relative; display: flex; align-items: flex-end; padding: 32px; color: #fff; }
+  /* Apertura: foto a tutto schermo (Etna e agrumeti) con logo e frase sopra */
+  .hero { position: relative; min-height: calc(100vh - 60px); min-height: calc(100svh - 60px); display: flex; align-items: flex-end; justify-content: center; text-align: center; color: #fff; background: var(--forte) url('SalieLava.jpeg') center 45% / cover no-repeat; }
+  .hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(43,26,20,.25) 0%, rgba(43,26,20,.45) 55%, rgba(43,26,20,.6) 100%); }
+  .hero .contenuto { position: relative; padding: 96px 16px 9vh; max-width: 760px; width: 100%; }
   .hero h1 { margin: 0 0 24px; font-weight: normal; }
-  .marchio { display: inline-block; font-family: 'Marcellus', serif; font-size: clamp(2.4rem, 5.5vw, 4.2rem); line-height: 1; letter-spacing: .02em; border: 2px solid currentColor; padding: .3em .65em .36em; white-space: nowrap; }
-  .hero h1 { color: var(--titolo); }
-
-  .hero p.sotto { font-size: 1.2rem; color: var(--testo-tenue); margin: 0 0 28px; max-width: 30ch; }
-  .badge { display: inline-block; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; border: 1px solid var(--titolo); color: var(--titolo); padding: 4px 12px; border-radius: 999px; margin-bottom: 22px; }
-  .bottone { display: inline-block; background: var(--scuro); color: #fff; text-decoration: none; padding: 14px 26px; border-radius: 999px; font-weight: 600; }
+  .marchio { display: inline-block; font-family: 'Marcellus', serif; font-size: clamp(2.4rem, 7vw, 5rem); line-height: 1; letter-spacing: .02em; border: 2px solid currentColor; padding: .3em .65em .36em; white-space: nowrap; color: #fff; }
+  .hero .marchio em { color: var(--chiaro); }
+  .hero p.sotto { font-size: clamp(1.1rem, 2.4vw, 1.35rem); color: rgba(255,255,255,.95); margin: 0 auto 32px; max-width: 34ch; text-shadow: 0 1px 12px rgba(0,0,0,.35); }
+  .badge { display: inline-block; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; border: 1px solid rgba(255,255,255,.85); color: #fff; padding: 4px 12px; border-radius: 999px; margin-bottom: 26px; }
+  .bottone { display: inline-block; background: var(--fondo); color: var(--titolo); text-decoration: none; padding: 14px 26px; border-radius: 999px; font-weight: 600; }
   .segnaposto { font-size: .85rem; opacity: .7; border: 1px dashed currentColor; padding: 6px 10px; }
-  @media (max-width: 820px) { .hero { grid-template-columns: 1fr; } .hero .lava-lato { min-height: 300px; } }
-
   section { padding: 88px 0; }
   h2 { font-family: var(--serif); font-weight: normal; font-size: clamp(1.9rem, 4vw, 2.7rem); line-height: 1.15; margin: 0 0 24px; }
   .occhiello { font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--titolo); margin-bottom: 10px; }
@@ -118,20 +115,14 @@
   </div>
 </header>
 
-<div class="hero">
-  <div class="sale-lato">
-    <div>
-      <div class="badge">Associazione di promozione sociale · in costituzione</div>
-      <h1><span class="marchio">Sali <em>e</em> Lava</span></h1>
-      <p class="sotto">Cultura, terra e persone in Sicilia, tra le saline di Marsala e le campagne di Regalbuto.</p>
-      <a class="bottone" href="#collabora">Costruiamo qualcosa insieme</a>
-    </div>
-  </div>
-  <div class="lava-lato">
-    <span class="segnaposto">[foto grande: paesaggio — da scegliere tra le vostre]</span>
+<div class="hero" role="img" aria-label="L'Etna vista dagli agrumeti dell'entroterra siciliano">
+  <div class="contenuto">
+    <div class="badge">Associazione di promozione sociale · in costituzione</div>
+    <h1><span class="marchio">Sali <em>e</em> Lava</span></h1>
+    <p class="sotto">Cultura, terra e persone in Sicilia, tra le saline di Marsala e le campagne di Regalbuto.</p>
+    <a class="bottone" href="#collabora">Costruiamo qualcosa insieme</a>
   </div>
 </div>
-
 <section id="chi-siamo">
   <div class="wrap colonna">
     <div class="occhiello">Chi siamo</div>
