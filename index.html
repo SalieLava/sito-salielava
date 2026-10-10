@@ -62,7 +62,7 @@
   .colonna p { margin: 0 0 18px; }
 
   /* Tre assi */
-  .assi { background: var(--chiaro); }
+  .assi { background: linear-gradient(rgba(170,194,194,.82), rgba(170,194,194,.82)), url('sfondo-cosa-facciamo.jpg') center / cover no-repeat, var(--chiaro); }
   .griglia3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
   .asse { background: var(--fondo); padding: 28px; border-top: 4px solid var(--accento); }
   .asse h3 { font-family: var(--serif); font-weight: normal; font-size: 1.4rem; margin: 0 0 12px; }
@@ -74,6 +74,8 @@
   .luogo { border-radius: 4px; overflow: hidden; background: #fff; }
   .luogo .foto { aspect-ratio: 4/3; background: var(--medio) center/cover no-repeat; color: #fff; display: flex; align-items: flex-end; padding: 16px; }
   .luogo:nth-child(2) .foto { background-color: var(--foto2); color: var(--su-foto2); }
+  .luogo .foto.torrino { background-image: url('luogo-torrino-mauri.jpg'); background-position: center 72%; }
+  .luogo .foto.crisciuna { background-image: url('luogo-crisciuna.jpg'); }
   .luogo .testo { padding: 24px; }
   .luogo h3 { font-family: var(--serif); font-weight: normal; font-size: 1.5rem; margin: 0 0 4px; }
   .luogo .dove { font-size: .85rem; letter-spacing: .06em; text-transform: uppercase; color: var(--titolo); margin-bottom: 12px; }
@@ -85,6 +87,7 @@
   .persone { background: var(--chiaro); }
   .griglia-persone { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 28px; margin-top: 40px; }
   .persona .ritratto { aspect-ratio: 1; border-radius: 50%; background: var(--fondo) center/cover no-repeat; border: 2px dashed var(--forte); margin-bottom: 14px; }
+  .persona .ritratto.con-foto { border: 0; }
   .persona h3 { font-family: var(--serif); font-weight: normal; font-size: 1.2rem; margin: 0; }
   .persona .ruolo { font-size: .9rem; color: var(--titolo); }
 
@@ -160,7 +163,7 @@
     <h2>Tra il sale e la lava.</h2>
     <div class="griglia2">
       <div class="luogo">
-        <div class="foto"><span class="segnaposto">[foto: Casa Torrino Mauri / Stagnone]</span></div>
+        <div class="foto torrino" role="img" aria-label="Casa Torrino Mauri al tramonto"></div>
         <div class="testo">
           <div class="dove">Marsala (TP)</div>
           <h3>Casa Torrino Mauri</h3>
@@ -168,7 +171,7 @@
         </div>
       </div>
       <div class="luogo">
-        <div class="foto"><span class="segnaposto">[foto: Contrada Crisciunà]</span></div>
+        <div class="foto crisciuna" role="img" aria-label="Un ulivo antico in Contrada Crisciunà"></div>
         <div class="testo">
           <div class="dove">Regalbuto (EN)</div>
           <h3>Contrada Crisciunà</h3>
@@ -185,9 +188,9 @@
     <div class="occhiello">Le persone</div>
     <h2>Chi sta facendo nascere Sali e Lava.</h2>
     <div class="griglia-persone">
-      <div class="persona"><div class="ritratto"></div><h3>Greta Naselli</h3><div class="ruolo">Presidente</div></div>
-      <div class="persona"><div class="ritratto"></div><h3>Camilla Ioli</h3><div class="ruolo">Vicepresidente</div></div>
-      <div class="persona"><div class="ritratto"></div><h3>Gaia Guidotti</h3><div class="ruolo">Tesoriera</div></div>
+      <div class="persona"><div class="ritratto con-foto" style="background-image:url('persona-greta.jpg')" role="img" aria-label="Greta Naselli"></div><h3>Greta Naselli</h3><div class="ruolo">Presidente</div></div>
+      <div class="persona"><div class="ritratto con-foto" style="background-image:url('persona-camilla.jpg')" role="img" aria-label="Camilla Ioli"></div><h3>Camilla Ioli</h3><div class="ruolo">Vicepresidente</div></div>
+      <div class="persona"><div class="ritratto con-foto" style="background-image:url('persona-gaia.jpg')" role="img" aria-label="Gaia Guidotti"></div><h3>Gaia Guidotti</h3><div class="ruolo">Tesoriera</div></div>
       <div class="persona"><div class="ritratto"></div><h3>Emily</h3><div class="ruolo">Socia fondatrice</div></div>
       <div class="persona"><div class="ritratto"></div><h3>Elie Laucher</h3><div class="ruolo">Socia fondatrice</div></div>
     </div>
